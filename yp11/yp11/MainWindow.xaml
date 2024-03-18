@@ -1,0 +1,21 @@
+﻿<Window x:Class="yp11.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:yp11"
+        mc:Ignorable="d"
+        Title="ComicsShop" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFAFDFD"/>
+                <GradientStop Color="#FF6BD9E6" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Жанр" HorizontalAlignment="Center" Margin="0,190,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.553,0.581" Height="44" Width="123" Click="Button_Click_1" Background="#FF9BE0D1"/>
+        <Button Content="Комикс" HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Height="44" Width="123" Click="Button_Click" Background="#FFBEEDE2"/>
+        <Button Content="Доставка" HorizontalAlignment="Center" Margin="0,253,0,0" VerticalAlignment="Top" Height="44" Width="123" Click="Button_Click_2" Background="#FF91E8D5"/>
+
+    </Grid>
+</Window>
