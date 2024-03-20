@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище BookModelContainer" CdmEntityContainer="BookEntities">
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="BookModel.Authors">
+        <MappingFragment StoreEntitySet="Authors">
+          <ScalarProperty Name="ID_Authors" ColumnName="ID_Authors" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BooKs">
+      <EntityTypeMapping TypeName="BookModel.BooKs">
+        <MappingFragment StoreEntitySet="BooKs">
+          <ScalarProperty Name="ID_BooKs" ColumnName="ID_BooKs" />
+          <ScalarProperty Name="BooksName" ColumnName="BooksName" />
+          <ScalarProperty Name="Authors_ID" ColumnName="Authors_ID" />
+          <ScalarProperty Name="DateCriation" ColumnName="DateCriation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewBookIzmena">
+      <EntityTypeMapping TypeName="BookModel.ViewBookIzmena">
+        <MappingFragment StoreEntitySet="ViewBookIzmena">
+          <ScalarProperty Name="название" ColumnName="название" />
+          <ScalarProperty Name="создание" ColumnName="создание" />
+          <ScalarProperty Name="имя_автора" ColumnName="имя автора" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
