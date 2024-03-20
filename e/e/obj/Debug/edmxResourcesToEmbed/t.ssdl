@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BookModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Authors">
+    <Key>
+      <PropertyRef Name="ID_Authors" />
+    </Key>
+    <Property Name="ID_Authors" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuthorName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BooKs">
+    <Key>
+      <PropertyRef Name="ID_BooKs" />
+    </Key>
+    <Property Name="ID_BooKs" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BooksName" Type="varchar" MaxLength="50" />
+    <Property Name="Authors_ID" Type="int" Nullable="false" />
+    <Property Name="DateCriation" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Book.dbo.ViewBookIzmena" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="ViewBookIzmena">
+    <Key>
+      <PropertyRef Name="имя автора" />
+    </Key>
+    <Property Name="название" Type="varchar" MaxLength="50" />
+    <Property Name="создание" Type="varchar" MaxLength="10" />
+    <Property Name="имя автора" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BooKs__Authors_I__5EBF139D">
+    <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+    <End Role="BooKs" Type="Self.BooKs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="ID_Authors" />
+      </Principal>
+      <Dependent Role="BooKs">
+        <PropertyRef Name="Authors_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище BookModelContainer">
+    <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooKs" EntityType="Self.BooKs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewBookIzmena" EntityType="Self.ViewBookIzmena" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewBookIzmena].[название] AS [название], 
+    [ViewBookIzmena].[создание] AS [создание], 
+    [ViewBookIzmena].[имя автора] AS [имя автора]
+    FROM [dbo].[ViewBookIzmena] AS [ViewBookIzmena]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__BooKs__Authors_I__5EBF139D" Association="Self.FK__BooKs__Authors_I__5EBF139D">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="BooKs" EntitySet="BooKs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
