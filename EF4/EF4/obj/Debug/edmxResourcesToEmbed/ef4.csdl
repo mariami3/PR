@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BookModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Authors">
+    <Key>
+      <PropertyRef Name="ID_Authors" />
+    </Key>
+    <Property Name="ID_Authors" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BooKs" Relationship="Self.FK__BooKs__Authors_I__01142BA1" FromRole="Authors" ToRole="BooKs" />
+  </EntityType>
+  <EntityType Name="BooKs">
+    <Key>
+      <PropertyRef Name="ID_BooKs" />
+    </Key>
+    <Property Name="ID_BooKs" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BooksName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Authors_ID" Type="Int32" Nullable="false" />
+    <Property Name="DateCriation" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TypeLit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Authors" Relationship="Self.FK__BooKs__Authors_I__01142BA1" FromRole="BooKs" ToRole="Authors" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK__BooKs__Authors_I__01142BA1">
+    <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+    <End Role="BooKs" Type="Self.BooKs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="ID_Authors" />
+      </Principal>
+      <Dependent Role="BooKs">
+        <PropertyRef Name="Authors_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BookEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="Self.Authors" />
+    <EntitySet Name="BooKs" EntityType="Self.BooKs" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK__BooKs__Authors_I__01142BA1" Association="Self.FK__BooKs__Authors_I__01142BA1">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="BooKs" EntitySet="BooKs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="EF4.Booke"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EF4"
+        mc:Ignorable="d"
+        Title="Booke" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="bk" AutoGenerateColumns="False"
+             SelectedItem ="{Binding BooKs}">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Номер" Binding="{Binding ID_BooKs}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding BooksName}"/>
+                <DataGridTextColumn  Header="Автор" Binding="{Binding Authors_ID}"/>
+                <DataGridTextColumn  Header="Создан" Binding="{Binding DateCriation}"/>
+                <DataGridTextColumn  Header="Тип" Binding="{Binding TypeLit}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Поиск" HorizontalAlignment="Left" Margin="38,379,0,0" VerticalAlignment="Top" Height="36" Width="113" Click="Button_Click"/>
+        <TextBox x:Name="Search" HorizontalAlignment="Left" Margin="38,330,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="248" Height="25"/>
+        <Button Content="Очистить" HorizontalAlignment="Left" Margin="186,379,0,0" VerticalAlignment="Top" Height="36" Width="113" Click="Button_Click_1"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="631,379,0,0" VerticalAlignment="Top" Height="36" Width="113" Click="Button_Click_2"/>
+        <ComboBox x:Name="Cb"  HorizontalAlignment="Left" Margin="354,332,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="Cb_SelectionChanged" DisplayMemberPath="Authors"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище BookModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Authors">
+    <Key>
+      <PropertyRef Name="ID_Authors" />
+    </Key>
+    <Property Name="ID_Authors" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AuthorName" Type="varchar" MaxLength="50" />
+    <Property Name="AuthorSurname" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BooKs">
+    <Key>
+      <PropertyRef Name="ID_BooKs" />
+    </Key>
+    <Property Name="ID_BooKs" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BooksName" Type="varchar" MaxLength="50" />
+    <Property Name="Authors_ID" Type="int" Nullable="false" />
+    <Property Name="DateCriation" Type="varchar" MaxLength="10" />
+    <Property Name="TypeLit" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK__BooKs__Authors_I__01142BA1">
+    <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+    <End Role="BooKs" Type="Self.BooKs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="ID_Authors" />
+      </Principal>
+      <Dependent Role="BooKs">
+        <PropertyRef Name="Authors_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище BookModelContainer">
+    <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BooKs" EntityType="Self.BooKs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BooKs__Authors_I__01142BA1" Association="Self.FK__BooKs__Authors_I__01142BA1">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="BooKs" EntitySet="BooKs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
