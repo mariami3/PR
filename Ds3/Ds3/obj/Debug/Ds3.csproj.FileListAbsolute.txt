@@ -1,0 +1,15 @@
+C:\Users\Дарико\source\repos\Ds3\Ds3\bin\Debug\Ds3.exe.config
+C:\Users\Дарико\source\repos\Ds3\Ds3\bin\Debug\Ds3.exe
+C:\Users\Дарико\source\repos\Ds3\Ds3\bin\Debug\Ds3.pdb
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.csproj.AssemblyReference.cache
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\MainWindow.g.cs
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\App.g.cs
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3_MarkupCompile.cache
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3_MarkupCompile.lref
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\MainWindow.baml
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.g.resources
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.Properties.Resources.resources
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.csproj.GenerateResource.cache
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.csproj.CoreCompileInputs.cache
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.exe
+C:\Users\Дарико\source\repos\Ds3\Ds3\obj\Debug\Ds3.pdb
