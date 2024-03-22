@@ -1,0 +1,29 @@
+﻿<Window x:Class="yu1.Comics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:yu1"
+        mc:Ignorable="d"
+        Title="Comics" Height="450" Width="800">
+    <Grid>
+
+        <DataGrid x:Name="comic" SelectionChanged="Comics_SelectionChanged" AutoGenerateColumns="False" ItemsSource ="{Binding a}" 
+                  SelectedItem ="{Binding comics}" Background="#FFDBF4ED">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Номер" Binding="{Binding ID_Comicses}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Comics_Name}"/>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Author}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="28,363,0,0" VerticalAlignment="Top" Height="33" Width="182" Background="#FFDBF4ED" Click="Button_Click"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Height="33" Margin="296,363,0,0" VerticalAlignment="Top" Width="182" Background="#FFDBF4ED" Click="Button_Click_1"/>
+        <Button Content="Удалить" HorizontalAlignment="Left" Margin="559,363,0,0" VerticalAlignment="Top" Height="33" Width="182" Background="#FFDBF4ED" Click="Button_Click_2"/>
+        <TextBox x:Name="B" HorizontalAlignment="Left" Margin="28,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+        <TextBox x:Name="B1" HorizontalAlignment="Center" Margin="0,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+        <TextBox x:Name="B2" HorizontalAlignment="Left" Margin="523,320,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="254"/>
+
+    </Grid>
+</Window>
